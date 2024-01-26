@@ -1,0 +1,1 @@
+This is the demo mini sample project of how to connect MongoDB with ExpressJS
