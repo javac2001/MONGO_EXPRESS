@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 
 let mongoose = require('mongoose');
 const { faker } = require('@faker-js/faker');
-let chat = require('./models/chat.js');
+let data = require('./models/data.js');
 
 
 // EXPRESS Setup
@@ -26,7 +26,7 @@ main()
 })
 
 async function main(){
-    await mongoose.connect('mongodb://127.0.0.1:27017/whatsapp')
+    await mongoose.connect('mongodb://127.0.0.1:27017/demo')
 }
 
 
@@ -37,4 +37,9 @@ app.listen(port, ()=>{
 // Root
 app.get("/",(req, res)=>{
     res.send("This is ROOT");
+})
+// Home Route
+app.get("/userdata",async (req, res)=>{
+    let datas = await data.find();
+    res.render("home.ejs",{datas});
 })

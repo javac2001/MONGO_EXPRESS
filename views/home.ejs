@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>HOME</h1>
+        <% for (let i=0; i< datas.length; i++){ %>
+            <div class="user-data">
+                <b>From :</b> <span><%= datas[i].from %></span>
+                <br>
+                <b>To :</b> <span><%= datas[i].to %></span>
+            </div>
+        <% } %>
+
+    </div>
+
+</body>
+
+</html>

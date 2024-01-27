@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 
-let whatsappSchema = new mongoose.Schema({
+let demoSchema = new mongoose.Schema({
     from : {
         type : String,
         required : true,
@@ -21,5 +21,5 @@ let whatsappSchema = new mongoose.Schema({
     }
 });
 
-let chat = mongoose.model("chat",whatsappSchema);
-module.exports = chat;
+let data = mongoose.model("data",demoSchema);
+module.exports = data;
