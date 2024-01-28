@@ -9,15 +9,29 @@
 </head>
 
 <body>
+
     <div class="container">
-        <h1>HOME</h1>
-        <% for (let i=0; i< datas.length; i++){ %>
-            <div class="user-data">
-                <b>From :</b> <span><%= datas[i].from %></span>
-                <br>
-                <b>To :</b> <span><%= datas[i].to %></span>
-            </div>
-        <% } %>
+        <div class="heading-container">
+            <h1>HOME</h1>
+        </div>
+        <div class="data-container">
+            
+                <% for (let i=0; i< datas.length; i++){ %>
+                    <div class="datas-container">
+                        <b>From :</b>
+                    <span>
+                        <%= datas[i].from %>
+                    </span>
+                    <br>
+                    <b>To :</b>
+                    <span>
+                        <%= datas[i].to %>
+                    </span>
+                    <br>
+                    </div>
+                <% } %>
+        </div>
+
 
     </div>
 
