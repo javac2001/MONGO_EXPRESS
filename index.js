@@ -43,3 +43,7 @@ app.get("/userdata",async (req, res)=>{
     let datas = await data.find();
     res.render("home.ejs",{datas});
 })
+// Create Route
+app.get("/userdata/new",(req, res)=>{
+    res.render("create.ejs");
+})
