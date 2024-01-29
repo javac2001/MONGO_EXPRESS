@@ -16,6 +16,7 @@ button{
     border: 2px solid aqua;
     color: aqua;
     border-radius: 5px;
+    cursor: pointer;
     transition: all 0.2s ease-in-out 0s;
 }
 button:hover{
@@ -59,4 +60,42 @@ button:hover{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.container .insertion-container{
+    height: calc(100% - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .insertion-container .data-insertion-container{
+    height: 400px;
+    width: 400px;
+    padding: 50px;
+    background-color: aqua;
+    color: black;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out 0s;
+}
+.container .insertion-container .data-insertion-container:hover{
+    border-radius: 10%;
+}
+.container .insertion-container .data-insertion-container form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container .insertion-container .data-insertion-container form button{
+    background-color: black;
+    color: aqua;
+    margin-top: 10px;
+}
+textarea {
+    resize: none;
+}
+.container .insertion-container .data-insertion-container form input,textarea{
+    border: none;
 }
