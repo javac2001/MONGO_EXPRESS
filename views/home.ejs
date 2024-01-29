@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Home</title>
 </head>
 
@@ -14,22 +14,20 @@
         <div class="heading-container">
             <h1>HOME</h1>
         </div>
+        <div class="create-container">
+            <form action="/userdata/new" method="get">
+                <button type="submit">CREATE</button>
+            </form>
+        </div>
         <div class="data-container">
-            
-                <% for (let i=0; i< datas.length; i++){ %>
-                    <div class="datas-container">
-                        <b>From :</b>
-                    <span>
-                        <%= datas[i].from %>
-                    </span>
+            <% for (let i=0; i< datas.length; i++){ %>
+                <div class="datas-container">
+                    <b>From :</b><span><%= datas[i].from %></span>
                     <br>
-                    <b>To :</b>
-                    <span>
-                        <%= datas[i].to %>
-                    </span>
+                    <b>To :</b><span><%= datas[i].to %></span>
                     <br>
-                    </div>
-                <% } %>
+                </div>
+            <% } %>
         </div>
 
 

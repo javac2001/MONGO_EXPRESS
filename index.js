@@ -43,3 +43,24 @@ app.get("/userdata",async (req, res)=>{
     let datas = await data.find();
     res.render("home.ejs",{datas});
 })
+// Create Route
+app.get("/userdata/new",(req,res)=>{
+    res.render("create.ejs")
+});
+
+app.post("/userdata",(req, res)=>{
+    let {dataTo : userTo, dataFrom : userFrom, dataMsg : userMsg} = req.body;
+    let insertData  = new data({
+        from : userFrom,
+        to : userTo,
+        msg : userMsg,
+        created_at : new Date
+    });
+    insertData.save()
+    .then(()=>{
+        res.redirect("/userdata");
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+})
