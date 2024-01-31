@@ -22,10 +22,11 @@
         <div class="data-container">
             <% for (let i=0; i< datas.length; i++){ %>
                 <div class="datas-container">
-                    <b>From :</b><span><%= datas[i].from %></span>
+                    <b>From</b><span><%= datas[i].from %></span>
                     <br>
-                    <b>To :</b><span><%= datas[i].to %></span>
+                    <b>To</b><span><%= datas[i].to %></span>
                     <br>
+                    <b>DATE</b><span><%= datas[i].created_at.toString().split(" ").slice(0, 4).join("-") %></span>
                 </div>
             <% } %>
         </div>
