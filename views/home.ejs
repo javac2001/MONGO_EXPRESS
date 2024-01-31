@@ -27,6 +27,10 @@
                     <b>To</b><span><%= datas[i].to %></span>
                     <br>
                     <b>DATE</b><span><%= datas[i].created_at.toString().split(" ").slice(0, 4).join("-") %></span>
+                    <br>
+                    <form action="/userdata/new" method="get">
+                        <button type="submit">EDIT</button>
+                    </form>
                 </div>
             <% } %>
         </div>

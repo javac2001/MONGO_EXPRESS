@@ -88,7 +88,9 @@ button:hover{
     align-items: center;
     flex-direction: column;
 }
-.container .insertion-container .data-insertion-container form button{
+.container .insertion-container .data-insertion-container form button,
+.data-container .datas-container form button
+{
     background-color: black;
     color: aqua;
     margin-top: 10px;
