@@ -28,9 +28,14 @@
                     <br>
                     <b>DATE</b><span><%= datas[i].created_at.toString().split(" ").slice(0, 4).join("-") %></span>
                     <br>
-                    <form action="/userdata/new" method="get">
+                    <b>MESSAGE</b><span><%= datas[i].msg %></span>
+                    <br>
+                    <form action="/userdata/update/<%= datas[i]._id %>" method="get">
                         <button type="submit">EDIT</button>
                     </form>
+                    <!-- <form action="/userdata/update/<%= datas[i]._id %>" method="get">
+                        <button type="submit">DELETE</button>
+                    </form> -->
                 </div>
             <% } %>
         </div>

@@ -64,3 +64,24 @@ app.post("/userdata",(req, res)=>{
         console.log(err);
     })
 })
+// Update Route
+app.get("/userdata/update/:id",async (req, res)=>{
+    let {id} = req.params;
+    let datas = await data.findById(id);
+    console.log(id);
+    console.log(datas);
+    res.render("update.ejs",{datas});
+});
+
+app.patch("/userdata/:id",async (req,res)=>{
+    let {id} = req.params;
+    let {dataMsg : message} = req.body;
+    data.findByIdAndUpdate(id, {msg : message},{runValidators : true, new : true})
+    .then((result)=>{
+        console.log(result);
+    })
+    .catch((err)=>{
+        console.log(err);
+    });
+    res.redirect("/userdata");
+})
