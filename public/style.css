@@ -101,3 +101,42 @@ textarea {
 .container .insertion-container .data-insertion-container form input,textarea{
     border: none;
 }
+
+.container .delete-container{
+    height: calc(100% - 100px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.container .delete-container .delete-data{
+    height: 200px;
+    width: 400px;
+    background-color: aqua;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.container .delete-container .delete-data form button{
+    height: 2rem;
+    width: 6rem;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0s;
+}
+.container .delete-container .delete-data .confirm-delete button{
+    color: white;
+    background-color: red;
+    border: 2px solid red;
+}
+.container .delete-container .delete-data form button:hover{
+    background-color: black;
+    border: none;
+    color: aqua;
+    border-radius: 5px 0px 5px 0px;
+}

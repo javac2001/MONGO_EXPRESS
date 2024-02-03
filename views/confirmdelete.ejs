@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>DELETE</title>
+</head>
+<body>
+    <div class="container">
+        <div class="delete-container">
+            <div class="delete-data">
+                <form action="/userdata/<%= datas._id %>/<%= datas.from %>/<%= datas.to %>/<%= datas.msg %>/<%= datas.created_at %>" method="post">
+                    <button type="submit">CANCLE</button>
+                </form>
+                <form action="/userdata/<%= datas._id %>?_method=DELETE" method="post" class="confirm-delete">
+                    <button type="submit">CONFIRM</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

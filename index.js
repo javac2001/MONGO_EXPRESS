@@ -85,3 +85,33 @@ app.patch("/userdata/:id",async (req,res)=>{
     });
     res.redirect("/userdata");
 })
+
+// DELETE Route
+app.get("/userdata/delete/:id",async (req,res)=>{
+    let {id} = req.params;
+    let datas = await data.findById(id);
+    console.log(datas);
+    res.render("confirmdelete.ejs",{datas});
+});
+app.delete("/userdata/:id",(req, res)=>{
+    let {id} = req.params;
+    data.findByIdAndDelete(id,{runValidators : true, new : true})
+    .then((result)=>{
+        res.redirect("/userdata");
+        console.log(result);
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+})
+app.post("/userdata/:id/:from/:to/:msg/:created_at",(req, res)=>{
+    let {id,from,to,msg,created_at} = req.params;
+    data.findByIdAndUpdate(id, {from : from, to : to, msg : msg, created_at : created_at},{runValidators : true, new : true})
+    .then((result)=>{
+        console.log(result);
+    })
+    .catch((err)=>{
+        console.log(err);
+    });
+    res.redirect("/userdata");
+})
